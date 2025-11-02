@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: ai-summarizer-backend
+    env_file:
+      - ./backend/.env.example
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./backend/.chroma:/app/.chroma
+
+  frontend:
+    build: ./frontend
+    container_name: ai-summarizer-frontend
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend

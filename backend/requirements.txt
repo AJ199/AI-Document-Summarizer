@@ -1,0 +1,9 @@
+fastapi==0.114.2
+uvicorn==0.30.6
+python-multipart==0.0.9
+openai==1.50.2
+azure-ai-formrecognizer==3.3.3
+azure-core==1.30.2
+chromadb==0.5.5
+tiktoken==0.7.0
+pdfminer.six==20231228
